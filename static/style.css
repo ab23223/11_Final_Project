@@ -2,7 +2,7 @@
       font-family: 'Bebas Kai';
       font-style: normal;
       font-weight: normal;
-      src: url('/static/fonts/BebasKai.ttf') format('truetype');
+      src: url('/static/fonts/BebasKai.otf') format('opentype');
 }
 
 body{
@@ -17,11 +17,15 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
+/* Nav styling */
+
 nav{
-    background: darkgray;
+    background: black;
     padding: 20px;
     text-align: center;
     font-weight: bold;
+    position: fixed;
+    width: 100vw;
 }
 
 nav a {
@@ -40,6 +44,8 @@ h1{
     color: black;
     font-size: 30px;
 }
+
+/* Hero styling */
 
 .hero {
     /* Sizing */
@@ -94,6 +100,14 @@ h1{
     border-radius: 20px;
 }
 
+.hero .btn:hover{
+    background-color: white;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+/*Grid*/
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
@@ -116,14 +130,38 @@ h1{
 }
 
 .grid-container .column-one{
-    border-right: 3px solid darkgray; /* Adds a vertical line to the right of each item */
+    border-right: 3px dashed darkgray; /* Adds a vertical line to the right of each item */
 }
 
 
 .grid-container p{
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     width: 70%;
     margin: auto;
     padding-top: 15px;
+}
+
+
+/*FAQ Dropdown stlying */
+.faq {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.faq-question {
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+.faq-answer {
+  display: none;
+  margin-top: 0.5rem;
+  color: #444;
+}
+.faq-item.active .faq-answer {
+  display: block;
 }
