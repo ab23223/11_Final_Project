@@ -2,18 +2,20 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f8f8f8f8;
     color: #333;
+    margin: 0%;
 }
 
 nav{
     background: skyblue;
     padding: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    margin: 20px;
     font-size: 30px;
 }
 
@@ -25,4 +27,90 @@ nav a:hover{
 h1{
     color: black;
     font-size: 30px;
+}
+
+.hero {
+    /* Sizing */
+    width: 100%;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white; /* ADD THIS LINE */
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://cdn.shopify.com/s/files/1/0603/5439/6408/files/fishcircle_2000x952_09cd941e-e1e9-4ed6-9b93-a94166e9c37f.webp?v=1653509090');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:scroll;
+}
+
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+    color: white;
+    
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: white; /* CHANGE THIS LINE */
+    text-decoration: none;
+    font-size: 1.5em;
+    
+    /* Border styles */
+    border: 3px solid white; /* CHANGE THIS LINE */
+    border-radius: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+    gap: 20px; /* Adds space between columns */
+}
+
+.grid-container .column-two img{
+    width: 50%;
+    display:block;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20%;
+}
+
+.grid-container .column-one h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.grid-container .column-one{
+    border-right: 3px solid darkgray; /* Adds a vertical line to the right of each item */
+}
+
+
+.grid-container p{
+    text-align: center;
+    font-size: 20px;
+    width: 70%;
+    margin: auto;
 }
