@@ -22,21 +22,33 @@
         </div>
     </section>
 
-    <!-- Summary Section -->
-    <section class="summary">
-        <div class="container">
+    <!-- Main 2x2 Grid Section -->
+    <section class="content-grid">
+
+    <!-- Top Left: Summary -->
+    <div class="grid-item summary">
         <h2>Climate Change in a Nutshell</h2>
         <p>Climate change refers to long-term shifts in global temperatures and weather patterns. While it happens naturally, human activities like burning fossil fuels have accelerated it dramatically.</p>
         <ul>
-            <li>🌡️ Global average temperature has risen by ~1.1°C since the 19th century.</li>
-            <li>🌊 Sea levels are rising due to melting ice sheets.</li>
-            <li>🔥 More frequent and severe extreme weather events.</li>
+        <li>🌡️ Global average temperature has risen by ~1.1°C since the 19th century.</li>
+        <li>🌊 Sea levels are rising due to melting ice sheets.</li>
+        <li>🔥 More frequent and severe extreme weather events.</li>
         </ul>
-        </div>
-    </section>
+    </div>
 
-    <!-- Truths and Myths -->
-    <section class="faq">
+    <!-- Top Right: Image Placeholder -->
+    <div class="grid-item image-placeholder">
+        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2018_31/2514836/180730-greece-fire-ac-1047p.jpg" alt="Climate Change Image">
+    </div>
+
+    <!-- Bottom Left: Extra Text -->
+    <div class="grid-item extra-text">
+        <h2>Why It Matters</h2>
+        <p>Climate change affects ecosystems, communities, and economies worldwide. New Zealand is seeing impacts like rising sea levels, extreme weather, and biodiversity loss. Understanding these challenges is crucial for taking action.</p>
+    </div>
+
+    <!-- Bottom Right: FAQ -->
+    <div class="grid-item faq">
         <h2>Truths & Myths</h2>
 
         <div class="faq-item">
@@ -53,4 +65,17 @@
         <div class="faq-question">💨 Myth: "CO₂ is only a tiny part of the atmosphere, so it can’t matter."</div>
         <div class="faq-answer">❗ Fact: Even in small amounts, CO₂ traps heat effectively. Small increases have a big impact on global climate.</div>
         </div>
+    </div>
+
     </section>
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('active');
+    });
+    });
+    </script>
+
+</body>
+</html>

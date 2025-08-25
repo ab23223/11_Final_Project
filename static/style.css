@@ -1,15 +1,16 @@
 @font-face {
-      font-family: 'Bebas Kai';
-      font-style: normal;
-      font-weight: normal;
-      src: url('/static/fonts/BebasKai.otf') format('opentype');
+    font-family: 'Bebas Kai';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/static/fonts/BebasKai.otf') format('opentype');
 }
 
-body{
+/* Global Styles */
+body {
     font-family: 'Bebas Kai', sans-serif;
-    background-color: #f8f8f8f8;
+    background-color: #f7f7f7;
     color: #333;
-    margin: 0%;
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -17,9 +18,8 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
-/* Nav styling */
-
-nav{
+/* Nav Styling */
+nav {
     background: black;
     padding: 20px;
     text-align: center;
@@ -35,133 +35,173 @@ nav a {
     font-size: 30px;
 }
 
-nav a:hover{
-    text-decoration: none;
-    color:darkgray
+nav a:hover {
+    color: darkgray;
 }
 
-h1{
-    color: black;
-    font-size: 30px;
-}
-
-/* Hero styling */
-
+/* Hero Styling */
 .hero {
-    /* Sizing */
     width: 100%;
     height: 100vh;
-    
-    /* Flexbox stuff */
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Text styles */
     text-align: center;
-    color: white; /* ADD THIS LINE */
-    
-    /* Background styles */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://cdn.shopify.com/s/files/1/0603/5439/6408/files/fishcircle_2000x952_09cd941e-e1e9-4ed6-9b93-a94166e9c37f.webp?v=1653509090');
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.shopify.com/s/files/1/0603/5439/6408/files/fishcircle_2000x952_09cd941e-e1e9-4ed6-9b93-a94166e9c37f.webp?v=1653509090');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment:scroll;
+    background-attachment: scroll;
 }
 
 .hero h1 {
-    /* Text styles */
     font-size: 5em;
-    color: white;
-    
-    /* Margins */
-    margin-top: 0;
-    margin-bottom: 0.5em;
+    margin: 0 0 0.5em 0;
 }
 
 .hero .btn {
-    /* Positioning and sizing */
     display: block;
     width: 200px;
-    
-    /* Padding and margins */
     padding: 1em;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    /* Text styles */
-    color: white; /* CHANGE THIS LINE */
+    margin: 50px auto 0 auto;
+    color: white;
     text-decoration: none;
     font-size: 1.5em;
-    
-    /* Border styles */
-    border: 3px solid white; /* CHANGE THIS LINE */
+    border: 3px solid white;
     border-radius: 20px;
+    transition: all 0.5s;
 }
 
-.hero .btn:hover{
+.hero .btn:hover {
     background-color: white;
     color: black;
-    transition-duration: 0.5s;
 }
 
-/*Grid*/
+/* Grid Styling */
+.grid-container, .content-grid {
+    display: grid;
+    gap: 20px;
+}
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
-    gap: 20px; /* Adds space between columns */
+    grid-template-columns: 1fr 1fr;
 }
 
-.grid-container .column-two img{
+.grid-container .column-two img {
     width: 50%;
-    display:block;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    display: block;
+    margin: 50px auto;
     border-radius: 20%;
 }
 
-.grid-container .column-one h1{
+.grid-container .column-one {
+    border-right: 3px dashed darkgray;
+}
+
+.grid-container .column-one h1 {
     text-align: center;
     font-weight: bold;
     font-size: 50px;
 }
 
-.grid-container .column-one{
-    border-right: 3px dashed darkgray; /* Adds a vertical line to the right of each item */
-}
-
-
-.grid-container p{
+.grid-container p {
     text-align: center;
     font-size: 25px;
     width: 70%;
+    margin: 15px auto 0 auto;
+}
+
+/* 2x2 Content Grid */
+.content-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 100%;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    gap: 20px;
+}
+
+.content-grid .grid-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.image-placeholder img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
     margin: auto;
-    padding-top: 15px;
 }
 
-
-/*FAQ Dropdown stlying */
-.faq {
-  max-width: 700px;
-  margin: 2rem auto;
+.extra-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
+
+/* Summary Section */
+.summary {
+    text-align: center;
+}
+
+.summary h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.summary p, .summary ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.summary ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+}
+
+.summary li {
+    margin-bottom: 0.8rem;
+}
+
+/* FAQ Section */
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
 .faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
 }
+
 .faq-question {
-  cursor: pointer;
-  font-weight: bold;
-  position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
+
+.faq-question:hover {
+    color: #1a73e8;
+}
+
 .faq-answer {
-  display: none;
-  margin-top: 0.5rem;
-  color: #444;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
+
 .faq-item.active .faq-answer {
-  display: block;
+    max-height: 500px;
 }
