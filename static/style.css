@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f8f8f8;
+    color: #333;
+}
+
+nav{
+    background: skyblue;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color:darkgray
+}
+
+h1{
+    color: black;
+    font-size: 30px;
+}
