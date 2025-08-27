@@ -126,7 +126,7 @@ nav a:hover {
     background-color: #fff;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.1);
 }
 
 .image-placeholder img {
@@ -142,11 +142,17 @@ nav a:hover {
 }
 
 /* Summary Section */
-.summary {
+.summary, h2 {
     text-align: center;
 }
 
-.summary h2 {
+.extra-text h2{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.summary h2{
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #222;
@@ -184,8 +190,8 @@ nav a:hover {
 .faq-question {
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
     transition: color 0.3s ease;
 }
 
@@ -194,7 +200,7 @@ nav a:hover {
 }
 
 .faq-answer {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     padding-left: 1rem;
     max-height: 0;
@@ -204,4 +210,9 @@ nav a:hover {
 
 .faq-item.active .faq-answer {
     max-height: 500px;
+    padding-top: 1rem;
+}
+
+#truths {
+  scroll-margin-top: 80px; /* adjust this to match your nav height */
 }
