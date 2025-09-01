@@ -216,3 +216,8 @@ nav a:hover {
 #truths {
   scroll-margin-top: 80px; /* adjust this to match your nav height */
 }
+
+#truths ul{
+      margin-left: -50px;
+      text-align: center;
+}
