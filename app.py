@@ -18,5 +18,14 @@ def whatisclimatechange():
 def climatechangeissues():
     return template('climatechangeissues')
 
+@route('/history')
+def history():
+    return template('history')
+
+@route('/history2')
+def history2():
+    return template('history2')
+
+
 
 run(host='localhost', port=8080, debug=True, reloader=True)

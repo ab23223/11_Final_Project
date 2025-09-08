@@ -23,66 +23,65 @@
         </div>
     </section>
 
+    
     <section class="ocean-section">
-    <div class="ocean-grid">
-
-        <div class="ocean-item">
-        <h2>🌡️ Hotter Temperatures</h2>
-        <p>Global temperatures are rising, causing heatwaves and extreme weather events.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🌊 More Severe Storms</h2>
-        <p>Storms are becoming stronger and more frequent, threatening lives and infrastructure.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🥀 Increased Drought</h2>
-        <p>Many regions are experiencing prolonged periods without rain, affecting water supplies.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>💧 Warming, Rising Oceans</h2>
-        <p>The ocean is heating up and sea levels are rising, threatening coastal communities.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🐘 Loss of Species</h2>
-        <p>Climate change is accelerating extinction, impacting biodiversity worldwide.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🍕 Food Shortages</h2>
-        <p>Changing weather patterns and droughts reduce crop yields, risking global food security.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>😷 Increased Health Risks</h2>
-        <p>Rising temperatures and extreme weather bring new health challenges, from heat stress to disease spread.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🙍 Poverty & Displacement</h2>
-        <p>Vulnerable communities are being forced to move due to climate impacts, worsening poverty.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🪸 Coral Bleaching</h2>
-        <p>Warming oceans are destroying coral reefs, harming marine ecosystems.</p>
-        </div>
-
-        <div class="ocean-item">
-        <h2>🌱 Reduced Soil Health</h2>
-        <p>Soil degradation from droughts and erosion threatens agriculture and natural habitats.</p>
-        </div>
-
+    <!-- 1990s -->
+    <div class="timeline-item fade-item">
+        <h2>1992 🌍</h2>
+        <p>Earth Summit in Rio de Janeiro raises global awareness about climate change and biodiversity.</p>
     </div>
+
+    <div class="timeline-item fade-item">
+        <h2>1997 🏭</h2>
+        <p>Kyoto Protocol is adopted, committing countries to reduce greenhouse gas emissions.</p>
+    </div>
+
+    <!-- 2000s -->
+    <div class="timeline-item fade-item">
+        <h2>2005 🔥</h2>
+        <p>Record-breaking heatwaves in Europe; climate scientists warn of intensifying global warming.</p>
+    </div>
+
+    <div class="timeline-item fade-item">
+        <h2>2008 🌊</h2>
+        <p>Rising sea levels continue to threaten low-lying islands and coastal cities worldwide.</p>
+    </div>
+
+    <!-- 2010s -->
+    <div class="timeline-item fade-item">
+        <h2>2010 🌪️</h2>
+        <p>Hurricane season highlights the increased frequency and intensity of storms linked to climate change.</p>
+    </div>
+
+    <div class="timeline-item fade-item">
+        <h2>2015 🏖️</h2>
+        <p>Paris Agreement signed: nations agree to limit global warming to below 2°C.</p>
+    </div>
+
+    <div class="timeline-item fade-item">
+        <h2>2017 🌡️</h2>
+        <p>Wildfires and heatwaves devastate several continents, emphasizing the urgency for action.</p>
+    </div>
+
+    <!-- 2020s -->
+    <div class="timeline-item fade-item">
+        <h2>2020 🦠</h2>
+        <p>Global lockdowns due to COVID-19 temporarily reduce emissions, highlighting human impact.</p>
+    </div>
+
+    <div class="timeline-item fade-item">
+        <h2>2021 🌱</h2>
+        <p>IPCC releases report: human activity is “unequivocally” the cause of global warming.</p>
+    </div>
+
+    <div class="timeline-item fade-item">
+        <h2>2023 🌊</h2>
+        <p>Rising seas and extreme weather continue to threaten ecosystems and human populations.</p>
+    </div>
+
+    <!-- Add more events as needed -->
     </section>
 
-    <section class="content-grid">
-    <h2>Back on Land</h2>
-    <p>This is where your normal website continues.</p>
-    </section>
 
 
 
@@ -229,6 +228,20 @@
             }
         });
         });
+
+        document.addEventListener("scroll", () => {
+        const items = document.querySelectorAll(".fade-item");
+        const windowHeight = window.innerHeight;
+
+        items.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < windowHeight * 0.8) {
+            item.style.opacity = 1;
+            item.style.transform = "translateY(0)";
+            }
+        });
+        });
+
 
 
         

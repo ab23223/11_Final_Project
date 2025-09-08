@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What is Climate Change?</title>
+    <title>The History of Climate Change</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
@@ -17,29 +17,108 @@
 
     <section class="hero">
         <div class="hero-inner">
-            <h1>What is Climate Change?</h1>
-            <h2>The Truths and the Myths</h2>
-            <a href="" class="btn" id="scroll-btn">🌍 Discover the Facts</a>
+            <h1>Climate Changes History</h1>
+            <h2>How has it changed and what effects has it had</h2>
+            <a href="" class="btn" id="scroll-btn">Lets find out</a>
         </div>
     </section>
+
+    
+    <div class="timeline-wrapper">
+        <div class="timeline">
+
+        <div class="timeline-item left">
+            <div class="content">
+            <i class="fa-solid fa-code"></i>
+            <h2>Step 1</h2>
+            <p>Learn HTML & CSS basics</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+            <i class="fa-solid fa-laptop-code icon"></i>
+            <h2>Step 2</h2>
+            <p>Practice building layouts</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+            <i class="fas fa-magic icon"></i>
+            <h2>Step 3</h2>
+            <p>Animate with Javascript</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+            <i class="fas fa-rocket icon"></i>
+            <h2>Step 4</h2>
+            <p>Deploy Your Site</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+            <i class="fas fa-database icon"></i>
+            <h2>Step 5</h2>
+            <p>Learn backend & databases</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+            <i class="fas fa-network-wired icon"></i>
+            <h2>Step 6</h2>
+            <p>Understand APIs & integration</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+            <i class="fas fa-bug icon"></i>
+            <h2>Step 7</h2>
+            <p>Test and Debug you code</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+            <i class="fas fa-users icon"></i>
+            <h2>Step 8</h2>
+            <p>Launch & Get user feedback</p>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
 
     <!-- Main 2x2 Grid Section -->
     <section class="content-grid">
 
     <!-- Top Left: Summary -->
     <div class="grid-item summary" id="truths">
-        <h2>What is Climate Change?</h2>
-        <p>Climate Change is a change in global or regional climate patterns, in particular a change apparent from the mid to late 20th century onwards and attributed largely to the increased levels of atmospheric carbon dioxide produced by the use of fossil fuels.</p>
+        <h2>What are the Issues?</h2>
+        <p>Climate Change is creating many issues for our planet, at this rate if we do not do anything to slow down Climate change, the effects below will continue to get worse.</p>
         <ul>
-        <li>🌡️ Global average temperature has risen by ~1.1°C in the last 100 years.</li>
-        <li>🌊 Sea levels are rising due to melting ice sheets.</li>
-        <li>🔥 More frequent and severe extreme weather events.</li>
+        <li>🌡️ Hotter temperatures.</li>
+        <li>🌊 More severe storms.</li>
+        <li>🥀 Increased drought.</li>
+        <li>💧 A warming, rising ocean.</li>
+        <li>🐘 Loss of species.</li>
+        <li>🍕 Not enough food.</li>
+        <li>😷 More health risks.</li>
+        <li>🙍 Poverty and displacement.</li>
+        <li>🪸 Coral bleaching.</li>
+        <li>🌱 Reduced soil health.</li>
         </ul>
     </div>
 
     <!-- Top Right: Image Placeholder -->
     <div class="grid-item image-placeholder">
-        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2018_31/2514836/180730-greece-fire-ac-1047p.jpg" alt="Climate Change Image">
+        <img src="https://www.thisiscolossal.com/wp-content/uploads/2023/06/51480672803_92fb8a21aa_k-960x640.jpg" alt="Climate Change Image">
     </div>
 
     <!-- Bottom Left: Extra Text -->
@@ -108,20 +187,42 @@
 
     </section>
 
+    
+    
     <script>
-    document.querySelectorAll('.faq-question').forEach(item => {
-        item.addEventListener('click', () => {
-            item.parentElement.classList.toggle('active');
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
         });
-    });
 
-    document.getElementById("scroll-btn").addEventListener("click", function(e) {
-        e.preventDefault(); // stop the # from showing
-        document.getElementById("truths").scrollIntoView({ 
-        behavior: "smooth" 
+        document.getElementById("scroll-btn").addEventListener("click", function(e) {
+            e.preventDefault(); // stop the # from showing
+            document.getElementById("truths").scrollIntoView({ 
+            behavior: "smooth" 
+            });
         });
-    });
+        
+        const items = document.querySelectorAll(".timeline-item");
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+            });
+        },
+        {
+            threshold: 0.3,
+            rootMargin: "0px 0px -100px 0px",
+        }
+        );
+        items.forEach((item) => observer.observe(item));
+
     </script>
+
 
 </body>
 </html>
