@@ -23,6 +23,58 @@
         </div>
     </section>
 
+        <section class="ocean-section">
+    <div class="ocean-grid">
+
+        <div class="ocean-item fade-in">
+        <h2>What is Climate Change?</h2>
+        <p>Climate Change is a change in global or regional climate patterns, in particular a change apparent from the mid to late 20th century onwards and attributed largely to the increased levels of atmospheric carbon dioxide produced by the use of fossil fuels.</p>
+        <p>🌡️ Global average temperature has risen by ~1.1°C in the last 100 years.</p>
+        <p>🌊 Sea levels are rising due to melting ice sheets.</p>
+        <p>🔥 More frequent and severe extreme weather events.</p>
+        </div>
+
+
+        <div class="ocean-item fade-in">
+        <h2>Why it matters</h2>
+        <p>Climate change matters because it threatens human health, safety, and livelihoods, and negatively impacts all life on Earth.</p>
+        <p>It leads to more extreme weather events, rising sea levels, and disrupted ecosystems and economies.</p>
+        <p>It creates escalating challenges for populations, especially in vulnerable regions, making it essential to act now to reduce emissions and build resilience.</p>
+        </div>
+
+        <div class="grid-item image-placeholder">
+            <img class="fade-in" src="https://www.streetmachine.com.au/wp-content/uploads/2023/08/ppg-supreme-ct-9884.jpg" alt="Climate Change Image">
+        </div>
+
+        <div class="ocean-item fade-in">
+        <h2>🍕 Food Shortages</h2>
+        <p>Changing weather patterns and droughts reduce crop yields, risking global food security.</p>
+        </div>
+
+        <div class="ocean-item fade-in">
+        <h2>😷 Increased Health Risks</h2>
+        <p>Rising temperatures and extreme weather bring new health challenges, from heat stress to disease spread.</p>
+        </div>
+
+        <div class="ocean-item fade-in">
+        <h2>🙍 Poverty & Displacement</h2>
+        <p>Vulnerable communities are being forced to move due to climate impacts, worsening poverty.</p>
+        </div>
+
+        <div class="ocean-item fade-in">
+        <h2>🪸 Coral Bleaching</h2>
+        <p>Warming oceans are destroying coral reefs, harming marine ecosystems.</p>
+        </div>
+
+        <div class="ocean-item fade-in">
+        <h2>🌱 Reduced Soil Health</h2>
+        <p>Soil degradation from droughts and erosion threatens agriculture and natural habitats.</p>
+        </div>
+
+    </div>
+    </section>
+
+
     <!-- Main 2x2 Grid Section -->
     <section class="content-grid">
 
@@ -109,18 +161,62 @@
     </section>
 
     <script>
-    document.querySelectorAll('.faq-question').forEach(item => {
-        item.addEventListener('click', () => {
-            item.parentElement.classList.toggle('active');
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
         });
-    });
 
-    document.getElementById("scroll-btn").addEventListener("click", function(e) {
-        e.preventDefault(); // stop the # from showing
-        document.getElementById("truths").scrollIntoView({ 
-        behavior: "smooth" 
+        document.getElementById("scroll-btn").addEventListener("click", function(e) {
+            e.preventDefault(); // stop the # from showing
+            document.getElementById("truths").scrollIntoView({ 
+            behavior: "smooth" 
+            });
         });
-    });
+
+        document.addEventListener("scroll", () => {
+        const section = document.querySelector(".ocean-section");
+        const ocean = document.querySelector(".ocean");
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // How far are we into the section?
+        const start = Math.max(0, windowHeight - rect.top); 
+        const progress = Math.min(start / (rect.height + windowHeight), 1);
+
+        // Ocean rises based on progress (0 → 1)
+        ocean.style.height = `${progress * windowHeight}px`;
+
+        // Reveal text
+        document.querySelectorAll(".ocean-content h2, .ocean-content p").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < windowHeight * 0.8) {
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+            }
+        });
+        });
+
+        // Fade-in on scroll for both text and images
+        function handleFadeIn() {
+            const elements = document.querySelectorAll(".fade-in");
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight * 0.8) {
+                    el.classList.add("show");
+                }
+            });
+        }
+
+        // Run once when page fully loads
+        window.addEventListener("load", handleFadeIn);
+
+        // Run on scroll
+        document.addEventListener("scroll", handleFadeIn);
+
+
     </script>
 
 </body>

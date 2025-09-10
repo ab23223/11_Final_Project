@@ -201,6 +201,29 @@ nav a:hover {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.ocean-item h2{
+    font-size: 4rem;
+}
+
+.ocean-item p{
+    font-size: 1.4rem;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    max-width: 50%;
+    height: auto;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* ----------------------- Timeline ----------------------- */
 .timeline-wrapper {
     width: 100%;
