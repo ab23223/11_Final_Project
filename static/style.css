@@ -183,7 +183,7 @@ nav a:hover {
 /* ----------------------- Ocean Section ----------------------- */
 .ocean-section {
     min-height: 400vh;
-    background: linear-gradient(to bottom, #1e90ff, #001f4d);
+    background: linear-gradient(to bottom, #1e90ff 0%, #001f4d 80%, #f7f7f7 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -203,6 +203,12 @@ nav a:hover {
 
 .ocean-item h2{
     font-size: 4rem;
+}
+
+.ocean-item h1{
+    font-size: 5rem;
+    padding: 70px;
+    margin-bottom: 70px;
 }
 
 .ocean-item p{
@@ -227,7 +233,7 @@ nav a:hover {
 /* ----------------------- Timeline ----------------------- */
 .timeline-wrapper {
     width: 100%;
-    background: linear-gradient(to bottom, #1e90ff, #001f4d);
+    background: linear-gradient(to bottom, #1e90ff 0%, #001f4d 80%, #f7f7f7 100%);
     padding: 80px 0;
 }
 
@@ -308,6 +314,11 @@ nav a:hover {
     position: relative;
     box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     transition: transform 0.3s ease-in-out;
+}
+
+.timeline-item .content, p{
+    font-size: 1.5rem;
+    line-height: 40px;
 }
 
 .timeline-item .content:hover {

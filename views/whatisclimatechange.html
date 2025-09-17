@@ -23,8 +23,18 @@
         </div>
     </section>
 
-        <section class="ocean-section">
+    <section class="ocean-section">
     <div class="ocean-grid">
+
+        <div class="ocean-item fade-in">
+        <h1>Under the water...</h1>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        </div>
+
 
         <div class="ocean-item fade-in">
         <h2>What is Climate Change?</h2>
@@ -43,7 +53,7 @@
         </div>
 
         <div class="grid-item image-placeholder">
-            <img class="fade-in" src="https://www.streetmachine.com.au/wp-content/uploads/2023/08/ppg-supreme-ct-9884.jpg" alt="Climate Change Image">
+            <img class="fade-in" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2018_31/2514836/180730-greece-fire-ac-1047p.jpg" alt="Climate Change Image">
         </div>
 
         <div class="ocean-item fade-in">
@@ -69,6 +79,15 @@
         <div class="ocean-item fade-in">
         <h2>🌱 Reduced Soil Health</h2>
         <p>Soil degradation from droughts and erosion threatens agriculture and natural habitats.</p>
+        </div>
+
+        <div class="ocean-item fade-in">
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <h1>Back on land...</h1>
         </div>
 
     </div>
@@ -204,7 +223,7 @@
 
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                if (rect.top < windowHeight * 0.8) {
+                if (rect.top < windowHeight * 0.6) {
                     el.classList.add("show");
                 }
             });
