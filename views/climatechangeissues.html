@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What is Climate Change?</title>
+    <title>Climate Change Issues?</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
@@ -40,6 +40,12 @@
         <p>Global temperatures are rising, causing heatwaves and extreme weather events.</p>
         </div>
 
+        <div class="grid-item image-placeholder fade-in">
+            <canvas id="tempChart"></canvas>
+            <p class="caption">Figure 1: Global average temperature has risen ~1.1°C since 1880. Data: NASA.</p>
+        </div>
+
+
         <div class="ocean-item fade-in">
         <h2>🌊 More Severe Storms</h2>
         <p>Storms are becoming stronger and more frequent, threatening lives and infrastructure.</p>
@@ -53,6 +59,11 @@
         <div class="ocean-item fade-in">
         <h2>💧 Warming, Rising Oceans</h2>
         <p>The ocean is heating up and sea levels are rising, threatening coastal communities.</p>
+        </div>
+
+        
+        <div class="grid-item image-placeholder fade-in">
+            <canvas id="seaLevelChart"></canvas>
         </div>
 
         <div class="ocean-item fade-in">
@@ -75,6 +86,20 @@
         <p>Vulnerable communities are being forced to move due to climate impacts, worsening poverty.</p>
         </div>
 
+        <div class="ocean-item fade-in ">
+        <div class="chart-grid">
+            <div class="chart-box"><canvas id="doomedChart"></canvas></div>
+            <div class="chart-box"><canvas id="familyChart"></canvas></div>
+            <div class="chart-box"><canvas id="opportunityChart"></canvas></div>
+            <div class="chart-box"><canvas id="hesitantChart"></canvas></div>
+            <div class="chart-box"><canvas id="futureChart"></canvas></div>
+            <div class="chart-box"><canvas id="failedCareChart"></canvas></div>
+        </div>
+        </div>
+
+
+            
+
         <div class="ocean-item fade-in">
         <h2>🪸 Coral Bleaching</h2>
         <p>Warming oceans are destroying coral reefs, harming marine ecosystems.</p>
@@ -96,8 +121,6 @@
 
     </div>
     </section>
-
-
 
     <section class="content-grid">
 
@@ -186,58 +209,208 @@
 
     </section>
 
-    
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
     <script>
+    window.addEventListener("DOMContentLoaded", () => {
+
         document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                item.parentElement.classList.toggle('active');
+            item.addEventListener('click', () => item.parentElement.classList.toggle('active'));
+        });
+
+
+        document.getElementById("scroll-btn")?.addEventListener("click", e => {
+            e.preventDefault();
+            document.getElementById("oceann").scrollIntoView({ behavior: "smooth" });
+        });
+
+
+        function handleFadeIn() {
+            const elements = document.querySelectorAll(".fade-in");
+            const windowHeight = window.innerHeight;
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < windowHeight * 0.6) el.classList.add("show");
             });
-        });
+        }
+        window.addEventListener("load", handleFadeIn);
+        document.addEventListener("scroll", handleFadeIn);
 
-        document.getElementById("scroll-btn").addEventListener("click", function(e) {
-            e.preventDefault(); // stop the # from showing
-            document.getElementById("oceann").scrollIntoView({ 
-            behavior: "smooth" 
+
+        function handleOceanScroll() {
+            document.querySelectorAll(".ocean-item").forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if(rect.top < window.innerHeight * 0.8){
+                    item.style.opacity = 1;
+                    item.style.transform = "translateY(0)";
+                }
             });
-        });
-
-        document.addEventListener("scroll", () => {
-        const section = document.querySelector(".ocean-section");
-        const ocean = document.querySelector(".ocean");
-        const rect = section.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        const start = Math.max(0, windowHeight - rect.top); 
-        const progress = Math.min(start / (rect.height + windowHeight), 1);
-
-        ocean.style.height = `${progress * windowHeight}px`;
-
-        document.querySelectorAll(".ocean-content h2, .ocean-content p").forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < windowHeight * 0.8) {
-            el.style.opacity = 1;
-            el.style.transform = "translateY(0)";
-            }
-        });
-        });
-
-        document.addEventListener("scroll", () => {
-        const items = document.querySelectorAll(".ocean-item");
-        const windowHeight = window.innerHeight;
-
-        items.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < windowHeight * 0.8) {
-            item.style.opacity = 1;
-            item.style.transform = "translateY(0)";
-            }
-        });
-        });
+        }
+        document.addEventListener("scroll", handleOceanScroll);
+        window.addEventListener("load", handleOceanScroll);
 
 
-   </script>
+        const tempCtx = document.getElementById('tempChart')?.getContext('2d');
+        if(tempCtx){
+            new Chart(tempCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1880','1900','1920','1940','1960','1980','2000','2020'],
+                    datasets: [{
+                        label: 'Global Avg Temperature (°C)',
+                        data: [13.8,13.9,13.9,14.0,14.0,14.2,14.5,14.9],
+                        borderColor: '#ffffff',
+                        backgroundColor: 'rgba(255,255,255,0.2)',
+                        pointBackgroundColor: '#ffffff',
+                        pointRadius: 5,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: '#ffffff',
+                                boxWidth: 20,    
+                                padding: 15      
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                        y: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+                    }
+                }
+            });
+        }
 
+
+        const seaCtx = document.getElementById('seaLevelChart')?.getContext('2d');
+        if(seaCtx){
+            new Chart(seaCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1880','1900','1920','1940','1960','1980','2000','2020'],
+                    datasets: [{
+                        label: 'Global Sea Level (cm)',
+                        data: [0,2,3,5,7,10,15,20],
+                        borderColor: '#ffffff',
+                        backgroundColor: 'rgba(255,255,255,0.2)',
+                        pointBackgroundColor: '#ffffff',
+                        pointRadius: 5,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: '#ffffff',
+                                boxWidth: 20,    
+                                padding: 15      
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                        y: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+                    }
+                }
+            });
+        }
+
+        const countryLabels = [
+            'India', 'Philippines', 'Brazil', 'Portugal', 'United Kingdom',
+            'Australia', 'France', 'United States', 'Finland', 'Nigeria'
+        ];
+
+        const dataMap = {
+            doomed: [74, 73, 67, 62, 51, 50, 48, 46, 43, 42],
+            family: [65, 77, 65, 52, 39, 48, 50, 35, 30, 55],
+            opportunity: [67, 70, 50, 54, 53, 57, 61, 44, 42, 49],
+            hesitant: [41, 47, 48, 37, 38, 43, 37, 36, 42, 23],
+            future: [80, 92, 86, 81, 72, 76, 74, 68, 56, 70],
+            failedCare: [86, 93, 92, 89, 80, 81, 77, 78, 75, 76]
+        };
+
+        const chartTitles = {
+            doomed: 'Humanity is doomed',
+            family: 'Family security is threatened',
+            opportunity: 'Less opportunity than their parents',
+            hesitant: 'Hesitant to have children',
+            future: 'Future is frightening',
+            failedCare: 'People have failed to take care of the planet'
+        };
+
+        function createHorizontalChart(canvasId, data, label) {
+            const ctx = document.getElementById(canvasId)?.getContext('2d');
+            if (!ctx) return;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: countryLabels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: '#6285a6',
+                        borderRadius: 1,
+                        barThickness: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: label,
+                            color: '#ffffff',
+                            font: { size: 10, weight: 'light' },
+                            padding: { bottom: 10 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => `${ctx.parsed.x}%`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: '#ffffff',
+                                callback: value => value + '%'
+                            },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#ffffff' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        createHorizontalChart('doomedChart', dataMap.doomed, chartTitles.doomed);
+        createHorizontalChart('familyChart', dataMap.family, chartTitles.family);
+        createHorizontalChart('opportunityChart', dataMap.opportunity, chartTitles.opportunity);
+        createHorizontalChart('hesitantChart', dataMap.hesitant, chartTitles.hesitant);
+        createHorizontalChart('futureChart', dataMap.future, chartTitles.future);
+        createHorizontalChart('failedCareChart', dataMap.failedCare, chartTitles.failedCare);
+
+    });
+
+     
+    </script>
 
 </body>
 </html>

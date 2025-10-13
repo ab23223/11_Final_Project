@@ -389,3 +389,43 @@ nav a:hover {
     line-height: 1.6;
     transition: transform 0.3s ease;
 }
+
+.chart-section {
+  width: 100%;
+  background: linear-gradient(to bottom, #001f4d, #003366);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.chart-section h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ Two columns */
+  grid-template-rows: repeat(3, auto);   /* ✅ Three rows */
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.chart-box {
+  width: 100%;
+  max-width: 1000px;   /* bigger canvas = sharper lines */
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+.chart-box canvas {
+  width: 100%;          /* layout width */
+  height: auto;         /* preserve aspect ratio */
+  max-height: 300px;    /* optional, keep chart from getting too tall */
+  display: block;
+}
