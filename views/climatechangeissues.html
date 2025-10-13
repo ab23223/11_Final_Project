@@ -99,10 +99,8 @@
 
 
 
-    <!-- Main 2x2 Grid Section -->
     <section class="content-grid">
 
-    <!-- Top Left: Summary -->
     <div class="grid-item summary" id="truths">
         <h2>What are the Issues?</h2>
         <p>Climate Change is creating many issues for our planet, at this rate if we do not do anything to slow down Climate change, the effects below will continue to get worse.</p>
@@ -120,12 +118,10 @@
         </ul>
     </div>
 
-    <!-- Top Right: Image Placeholder -->
     <div class="grid-item image-placeholder">
         <img src="https://www.thisiscolossal.com/wp-content/uploads/2023/06/51480672803_92fb8a21aa_k-960x640.jpg" alt="Climate Change Image">
     </div>
 
-    <!-- Bottom Left: Extra Text -->
     <div class="grid-item extra-text">
         <h2>Why It Matters</h2>
         <p>Climate change matters because it threatens human health, safety, and livelihoods, and negatively impacts all life on Earth.</p>
@@ -133,7 +129,6 @@
         <p>It creates escalating challenges for populations, especially in vulnerable regions, making it essential to act now to reduce emissions and build resilience.</p>
     </div>
 
-    <!-- Bottom Right: FAQ -->
     <div class="grid-item faq">
         <h2>Truths & Myths</h2>
 
@@ -213,14 +208,11 @@
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // How far are we into the section?
         const start = Math.max(0, windowHeight - rect.top); 
         const progress = Math.min(start / (rect.height + windowHeight), 1);
 
-        // Ocean rises based on progress (0 → 1)
         ocean.style.height = `${progress * windowHeight}px`;
 
-        // Reveal text
         document.querySelectorAll(".ocean-content h2, .ocean-content p").forEach(el => {
             const rect = el.getBoundingClientRect();
             if (rect.top < windowHeight * 0.8) {
