@@ -1,4 +1,5 @@
-/* ----------------------- Fonts ----------------------- */
+/*-- Fonts --*/
+
 @font-face {
     font-family: 'Bebas Kai';
     font-style: normal;
@@ -6,7 +7,8 @@
     src: url('/static/fonts/BebasKai.otf') format('opentype');
 }
 
-/* ----------------------- Global Styles ----------------------- */
+/*-- General Styles --*/
+
 * {
     box-sizing: border-box;
 }
@@ -24,7 +26,7 @@ h1, h2, h3 {
     margin: 0;
 }
 
-/* ----------------------- Navigation ----------------------- */
+/*-- Nav--*/
 nav {
     background: black;
     padding: 20px;
@@ -47,7 +49,8 @@ nav a:hover {
     color: darkgray;
 }
 
-/* ----------------------- Hero Section ----------------------- */
+/*-- Hero Section --*/
+
 .hero {
     width: 100%;
     height: 100vh;
@@ -85,7 +88,8 @@ nav a:hover {
     color: black;
 }
 
-/* ----------------------- Content Grid ----------------------- */
+/*-- Content Grid --*/
+
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -144,7 +148,8 @@ nav a:hover {
     margin-bottom: 0.8rem;
 }
 
-/* ----------------------- FAQ ----------------------- */
+/*-- FAQ --*/
+
 .faq-item {
     border-bottom: 1px solid #ddd;
     padding: 1rem 0;
@@ -176,7 +181,6 @@ nav a:hover {
     padding-top: 1rem;
 }
 
-/* Scroll margin for anchor links */
 #truths {
     scroll-margin-top: 80px;
 }
@@ -186,7 +190,8 @@ nav a:hover {
     text-align: center;
 }
 
-/* ----------------------- Ocean Section ----------------------- */
+/*-- Ocean Section --*/
+
 .ocean-section {
     min-height: 400vh;
     background: linear-gradient(to bottom, #1e90ff 0%, #001f4d 80%, #f7f7f7 100%);
@@ -220,7 +225,7 @@ nav a:hover {
     font-size: 1.4rem;
 }
 
-/* Fade-in animation */
+
 .fade-in {
     opacity: 0;
     transform: translateY(40px);
@@ -232,7 +237,8 @@ nav a:hover {
     transform: translateY(0);
 }
 
-/* ----------------------- Timeline ----------------------- */
+/*-- Timeline --*/
+
 .timeline-wrapper {
     width: 100%;
     padding: 80px 0;
@@ -328,7 +334,8 @@ nav a:hover {
     transform: translateY(-4px);
 }
 
-/* ----------------------- Future Timeline ----------------------- */
+/*-- Future Timeline --*/
+
 .future-timeline {
     background: linear-gradient(to bottom, #f6fff7, #ffffff);
     padding: 4rem 0;
@@ -369,9 +376,9 @@ nav a:hover {
 
 
 .timeline-item.right .hope-content {
-    background-color: #e6f7ee; /* darker green */
+    background-color: #e6f7ee; 
     border: 1px solid #ccead4;
-    color: #2a4d2f; /* optional for contrast */
+    color: #2a4d2f; 
     font-style: italic;
     padding: 2rem 2.5rem;
     border-radius: 12px;
@@ -380,9 +387,9 @@ nav a:hover {
 }
 
 .timeline-item.left .hope-content {
-    background-color: #e6f7ee; /* darker green */
+    background-color: #e6f7ee; 
     border: 1px solid #ccead4;
-    color: #2a4d2f; /* optional for contrast */
+    color: #2a4d2f; 
     font-style: italic;
     padding: 2rem 2.5rem;
     border-radius: 12px;
@@ -405,8 +412,8 @@ nav a:hover {
 
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ Two columns */
-  grid-template-rows: repeat(3, auto);   /* ✅ Three rows */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(3, auto);
   gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -415,7 +422,7 @@ nav a:hover {
 
 .chart-box {
   width: 100%;
-  max-width: 1000px;   /* bigger canvas = sharper lines */
+  max-width: 1000px; 
   padding: 1.5rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.08);
@@ -424,17 +431,17 @@ nav a:hover {
 
 
 .chart-box canvas {
-  width: 100%;          /* layout width */
-  height: auto;         /* preserve aspect ratio */
-  max-height: 300px;    /* optional, keep chart from getting too tall */
+  width: 100%;          
+  height: auto;         
+  max-height: 300px;    
   display: block;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal columns */
-    align-items: center; /* vertically center content */
-    gap: 2rem; /* space between columns */
+    grid-template-columns: 1fr 1fr; 
+    align-items: center; 
+    gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
@@ -459,7 +466,7 @@ nav a:hover {
     object-fit: cover;
   }
 
-  /* Optional: make it responsive */
+  
   @media (max-width: 768px) {
     .grid-container {
       grid-template-columns: 1fr;
